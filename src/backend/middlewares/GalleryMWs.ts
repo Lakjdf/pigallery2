@@ -247,11 +247,11 @@ export class GalleryMWs {
       return next();
     }
 
-    const query: SearchQueryDTO = JSON.parse(
-      req.params['searchQueryDTO'] as string
-    );
-
     try {
+      const query: SearchQueryDTO = JSON.parse(
+        req.params['searchQueryDTO'] as string
+      );
+      
       const result = await ObjectManagers.getInstance().SearchManager.search(
         query
       );
